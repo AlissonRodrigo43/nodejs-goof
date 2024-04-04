@@ -1,13 +1,12 @@
-name: Hello World
+name: Nuclei
 
 on: push
 
 jobs:
-  helloworld:
+  nuclei:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello World!"
-      - run: uname -a
-      - run: id
-      - run: env
-  
+    - name: Nuclei - Vulnerability Scan
+      uses: projectdiscovery/nuclei-action@main
+      with:
+        target: https://juice-shop.herokuapp.com/
